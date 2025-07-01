@@ -1,4 +1,5 @@
 import 'package:counter_app/cubit/counter_cubit.dart';
+import 'package:counter_app/inc_dec_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -48,18 +49,19 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           FloatingActionButton(
             onPressed: (){
-              counterCubit.increament();
+              //counterCubit.increament();
+              Navigator.push(context, MaterialPageRoute(builder: (context) => IncDecPage(counterCubit: counterCubit)));
             },
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
-          FloatingActionButton(
-            onPressed: (){
-              counterCubit.decreament();
-            },
-            tooltip: 'Decrement',
-            child: const Icon(Icons.minimize),
-          ),
+          // FloatingActionButton(
+          //   onPressed: (){
+          //     counterCubit.decreament();
+          //   },
+          //   tooltip: 'Decrement',
+          //   child: const Icon(Icons.minimize),
+          // ),
         ],
       ),
     );
