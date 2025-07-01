@@ -13,14 +13,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final counterCubit = CounterCubit();
+  //final counterCubit = CounterCubit();
   
 
   @override
   Widget build(BuildContext context) {
 
     //final counter = counterCubit.state;
-
+    final counterCubit = BlocProvider.of<CounterCubit>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           FloatingActionButton(
             onPressed: (){
               //counterCubit.increament();
-              Navigator.push(context, MaterialPageRoute(builder: (context) => IncDecPage(counterCubit: counterCubit)));
+              Navigator.push(context, MaterialPageRoute(builder: (context) => IncDecPage()));
             },
             tooltip: 'Increment',
             child: const Icon(Icons.add),
