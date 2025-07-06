@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class CounterBloc extends Bloc {
+class CounterIncremented{}
+
+class CounterBloc extends Bloc<CounterIncremented, int>{
   CounterBloc() : super(0);
 }
