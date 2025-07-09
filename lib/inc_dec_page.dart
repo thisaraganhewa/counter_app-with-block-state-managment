@@ -1,3 +1,4 @@
+import 'package:counter_app/bloc/counter_bloc.dart';
 import 'package:counter_app/cubit/counter_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -14,6 +15,7 @@ class IncDecPage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final counterCubit = BlocProvider.of<CounterCubit>(context);
+    //final counterBloc = BlocProvider.of<CounterBloc>(context);
 
     return Scaffold(
       floatingActionButton: Column(
