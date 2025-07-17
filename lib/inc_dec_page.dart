@@ -14,8 +14,8 @@ class IncDecPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final counterCubit = BlocProvider.of<CounterCubit>(context);
-    //final counterBloc = BlocProvider.of<CounterBloc>(context);
+    //final counterCubit = BlocProvider.of<CounterCubit>(context);
+    final counterBloc = BlocProvider.of<CounterBloc>(context);
 
     return Scaffold(
       floatingActionButton: Column(
@@ -23,14 +23,14 @@ class IncDecPage extends StatelessWidget {
         children: [
           FloatingActionButton(
             onPressed: (){
-              counterCubit.increament();
+              counterBloc.add(CounterIncremented());
             },
             tooltip: 'Increment',
             child: const Icon(Icons.add),
           ),
           FloatingActionButton(
             onPressed: (){
-              counterCubit.decreament();
+              //counterCubit.decreament();
             },
             tooltip: 'Decrement',
             child: const Icon(Icons.minimize),
